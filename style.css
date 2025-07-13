@@ -117,15 +117,8 @@ header p {
 .section {
   padding: 1.5rem 2rem;
   max-width: 850px;
-  margin: auto;
 }
 
-h2 {
-  border-bottom: 1px solid #30363d;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-}
 /* ==================== BARRA LATERAL INTERACTIVA ==================== */
 .action-bar {
   position: fixed;
