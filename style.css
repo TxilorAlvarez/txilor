@@ -115,7 +115,7 @@ header p {
 
 /* ==================== SECCIONES ==================== */
 .section {
-  padding: 2rem 2rem;
+  padding: 1.5rem 2rem;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -195,37 +195,41 @@ header p {
 /* ==================== CARRUSEL DE CERTIFICADOS ==================== */
 .carousel {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding: 1rem 0;
 }
 
 .slide {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   text-align: center;
-}
-
-.slide span {
-  display: block;
-  margin: 0.8rem 0;
-  color: #c9d1d9;
-  font-weight: 600;
-  font-size: 1.2rem; /* Aumentado de 1rem a 1.2rem */
+  background-color: #161b22;
+  padding: 0.5rem;
 }
 
 .slide img {
-  width: 280px;        /* Aumentado de 220px */
-  height: 240px;       /* Aumentado de 200px */
-  object-fit: cover;
-  border-radius: 8px;  /* Ligeramente más redondeado */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra más visible */
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
   transition: transform 0.3s ease;
 }
 
 .slide img:hover {
-  transform: scale(1.08); /* Efecto más notorio al hacer hover */
+  transform: scale(1.05);
 }
 
+.slide span {
+  display: block;
+  margin: 0.5rem 0;
+  color: #c9d1d9;
+  font-weight: 600;
+  font-size: 1rem;
+}
 
 /* ==================== PROYECTOS Y LABORATORIOS ==================== */
 .proyectos ul {
