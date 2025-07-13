@@ -16,6 +16,12 @@ function toggleBar() {
   }
 }
 </script>
+<script>
+  document.querySelectorAll('.binary-background span').forEach(span => {
+    span.textContent = Math.random().toString(2).substr(2, 30);
+  });
+</script>
+
 
 <!-- Font Awesome solo con CDN (versión completa) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
