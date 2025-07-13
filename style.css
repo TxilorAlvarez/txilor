@@ -331,7 +331,7 @@ h2 {
 
 
 .experiencia {
-  background-image: url('/img/ciberseguridad.jpg'); /* Cambia el nombre según tu archivo */
+  background-image: url('img/ciberseguridad.jpg'); /* Cambia el nombre según tu archivo */
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
