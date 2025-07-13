@@ -122,9 +122,9 @@ header p {
 .action-bar {
   position: fixed;
   top: 50%;
-  left: -140px;
+  left: -135px;
   transform: translateY(-50%);
-  width: 160px;
+  width: 140px;
   background-color: #0d1117;
   padding: 1rem 0.6rem;
   border-top-right-radius: 10px;
