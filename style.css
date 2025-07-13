@@ -196,7 +196,7 @@ header p {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .slide {
@@ -205,24 +205,25 @@ header p {
 
 .slide span {
   display: block;
-  margin: 0.5rem 0;
+  margin: 0.8rem 0;
   color: #c9d1d9;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2rem; /* Aumentado de 1rem a 1.2rem */
 }
 
 .slide img {
-  width: 220px;
-  height: 200px;
+  width: 280px;        /* Aumentado de 220px */
+  height: 240px;       /* Aumentado de 200px */
   object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;  /* Ligeramente más redondeado */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra más visible */
   transition: transform 0.3s ease;
 }
 
 .slide img:hover {
-  transform: scale(1.05);
+  transform: scale(1.08); /* Efecto más notorio al hacer hover */
 }
+
 
 /* ==================== PROYECTOS Y LABORATORIOS ==================== */
 .proyectos ul {
