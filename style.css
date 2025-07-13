@@ -75,11 +75,128 @@ header p {
   left: 15%;
   animation-duration: 5s;
 }
+.binary-background span:nth-child(3) {
+  left: 25%;
+  animation-duration: 12s;
+}
+.binary-background span:nth-child(4) {
+  left: 5%;
+  animation-duration: 8s;
+}
+.binary-background span:nth-child(5) {
+  left: 0%;
+  animation-duration: 6s;
+}
+.binary-background span:nth-child(6) {
+  left: 60%;
+  animation-duration: 7s;
+}
+.binary-background span:nth-child(7) {
+  left: 75%;
+  animation-duration: 4s;
+}
+.binary-background span:nth-child(8) {
+  left: 50%;
+  animation-duration: 3s;
+}
 
+.binary-background span::before {
+  content: '0101010100111010101001011010100101010111010010101010010100101011';
+}
+
+@keyframes scrollBinary {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 200%;
+  }
+}
+
+@keyframes scrollBinary {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
 /* ==================== SECCIONES ==================== */
 .section {
   padding: 2rem;
 }
+
+/* ==================== BARRA LATERAL INTERACTIVA ==================== */
+.action-bar {
+  position: fixed;
+  top: 50%;
+  left: -140px;
+  transform: translateY(-50%);
+  width: 160px;
+  background-color: #0d1117;
+  padding: 1rem 0.6rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 255, 213, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.action-bar:hover {
+  left: 0;
+}
+
+.action-bar a {
+  color: #58a6ff;
+  margin: 1rem 0;
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.action-bar a:hover {
+  transform: scale(1.2);
+  color: #00ffd5;
+}
+
+.action-bar i {
+  pointer-events: none;
+}
+
+/* BOTÓN FLOTANTE PARA MÓVILES */
+.floating-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: #0d1117;
+  color: #00ffd5;
+  font-size: 1.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: 50px;
+  box-shadow: 2px 2px 10px rgba(0,255,213,0.3);
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+  transition: background 0.3s ease;
+}
+
+.floating-toggle:hover {
+  background-color: #161b22;
+  color: #00ffd5;
+}
+
+@media screen and (max-width: 768px) {
+  .action-bar {
+    left: -140px;
+  }
+  .floating-toggle {
+    display: block;
+  }
+}
+
 
 /* ==================== CARRUSEL DE CERTIFICADOS ==================== */
 .carousel {
@@ -232,14 +349,4 @@ footer {
   color: #8b949e;
   background: #161b22;
   font-size: 0.9rem;
-}
-
-/* ==================== ANIMACIÓN BINARIA (opcional) ==================== */
-@keyframes scrollBinary {
-  0% {
-    top: -100%;
-  }
-  100% {
-    top: 100%;
-  }
 }
