@@ -113,14 +113,6 @@ header p {
   }
 }
 
-@keyframes scrollBinary {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(200%);
-  }
-}
 /* ==================== SECCIONES ==================== */
 .section {
   padding: 2rem;
