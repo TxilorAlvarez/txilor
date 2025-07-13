@@ -115,7 +115,6 @@ header p {
 
 /* ==================== SECCIONES ==================== */
 .section {
-  .section {
   padding: 1.5rem 2rem;
   max-width: 850px;
   margin: auto;
@@ -216,7 +215,7 @@ h2 {
   display: block;
   margin: 0.5rem 0;
   color: #c9d1d9;
-  font-weight: 600;
+  font-weight: 650;
   font-size: 1rem;
 }
 
