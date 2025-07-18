@@ -1,0 +1,34 @@
+# Legal Notice – Personal Data Protection and Intellectual Property
+
+This repository is a **personal presentation of [Txilor_Alvarez]**, and it is protected by intellectual property rights and applicable data privacy regulations, including the **Habeas Data** principle (e.g., Law 1581 of 2012 in Colombia and related international frameworks such as the GDPR).
+
+## 🔐 All Rights Reserved
+
+The contents of this repository—including text, structure, and descriptions—are the intellectual property of the author. **Unauthorized reproduction, modification, redistribution, or commercial use is strictly prohibited** without prior written consent.
+
+## 🔒 Personal Data Protection
+
+Any personal information shared in this repository (such as name, biography, professional experience, or contact details) is protected under data protection laws. **This data may not be stored, processed, or reused without the explicit consent of the owner**.
+
+By accessing this repository, you agree to respect the personal and professional identity of the author.
+
+## 💼 Commercial Use and Licensing
+
+This work is not open source. Any **commercial use** of the content (including publishing, distribution, or reproduction in other media or platforms) **requires a formal agreement and may be subject to licensing fees**.
+
+To request permission or licensing terms, please contact:
+
+📧 **Email**: txilor_alvarez@proton.me
+
+---
+
+© [Jhon Tailor Alvarez Tangarife] – All rights reserved.
+
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+IN THE SOFTWARE.
