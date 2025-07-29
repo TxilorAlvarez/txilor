@@ -51,9 +51,9 @@ Explore my [repositories](https://github.com/TxilorAlvarez) to see:
 - Email:
 📬 txilor_alvarez@proton.me
 📩 jhontailora@gmail.com
-- LinkedIn: [linkedin.com/in/yourname](https://www.linkedin.com/in/txilor-alvarez/)  
-- GitHub: [github.com/yourusername](https://github.com/TxilorAlvarez)
-- YouTube: [youtube.com/yourusername](https://www.youtube.com/@txilor_alvarez) 
+- LinkedIn: [https://www.linkedin.com/in/txilor-alvarez/]
+- GitHub: [https://github.com/TxilorAlvarez]
+- YouTube: [https://www.youtube.com/@txilor_alvarez] 
 
 ---
 
