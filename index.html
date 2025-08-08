@@ -25,39 +25,6 @@ function toggleBar() {
 }
 </script>
   <!-- Librería html2pdf -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-<script>
-document.getElementById("btnGenerarPDF").addEventListener("click", function (e) {
-  e.preventDefault();
-
-  // Oculta la barra lateral y botones flotantes temporalmente
-  const actionBar = document.getElementById("actionBar");
-  const toggle = document.querySelector(".floating-toggle");
-  actionBar.style.display = "none";
-  toggle.style.display = "none";
-
-  // Espera breve para aplicar cambios visuales
-  setTimeout(() => {
-    const element = document.body;
-
-    const opt = {
-      margin:       [0.5, 0.5, 0.5, 0.5],
-      filename:     'CV_Txilor_Alvarez.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true },
-      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
-
-    html2pdf().set(opt).from(element).save().then(() => {
-      // Restaura visibilidad después de generar PDF
-      actionBar.style.display = "flex";
-      toggle.style.display = "block";
-    });
-  }, 300);
-});
-</script>
-
 </head>
 <body>
 
@@ -217,4 +184,36 @@ Certified by Google in Cybersecurity and trained through Harvard’s CS50, I app
 </footer>
 
 </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+document.getElementById("btnGenerarPDF").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  // Oculta la barra lateral y botones flotantes temporalmente
+  const actionBar = document.getElementById("actionBar");
+  const toggle = document.querySelector(".floating-toggle");
+  actionBar.style.display = "none";
+  toggle.style.display = "none";
+
+  // Espera breve para aplicar cambios visuales
+  setTimeout(() => {
+    const element = document.body;
+
+    const opt = {
+      margin:       [0.5, 0.5, 0.5, 0.5],
+      filename:     'CV_Txilor_Alvarez.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2, useCORS: true },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save().then(() => {
+      // Restaura visibilidad después de generar PDF
+      actionBar.style.display = "flex";
+      toggle.style.display = "block";
+    });
+  }, 300);
+});
+</script>
 </html>
