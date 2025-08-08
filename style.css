@@ -351,6 +351,7 @@ footer {
 }
 
 /* ==================== ESTILOS PARA IMPRESIÓN PDF ==================== */
+/* ==================== ESTILOS PARA IMPRESIÓN PDF ==================== */
 @media print {
   body {
     background: white !important;
@@ -378,7 +379,7 @@ footer {
     height: 120px !important;
     border-radius: 50% !important;
     border: 3px solid #333 !important;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 0.5rem auto !important; /* Espacio más corto debajo */
     display: block;
     object-fit: cover;
   }
@@ -390,10 +391,6 @@ footer {
   p, li {
     color: #333 !important;
     font-size: 12pt !important;
-  }
-
-  .carousel, .action-bar, .floating-toggle, .binary-background {
-    display: none !important; /* Oculta elementos no deseados en impresión */
   }
 
   a {
@@ -418,5 +415,37 @@ footer {
   footer {
     font-size: 10pt !important;
     color: #666 !important;
+  }
+
+  /* ========== Mostrar los certificados como miniaturas ========== */
+  .carousel {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    page-break-inside: avoid !important;
+    margin-top: 1rem !important;
+  }
+
+  .slide {
+    width: 150px !important;
+    margin: 0.5rem !important;
+    box-shadow: none !important;
+    background: none !important;
+    padding: 0 !important;
+  }
+
+  .slide img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 6px !important;
+    display: block !important;
+  }
+
+  /* ========== Ocultar elementos innecesarios para impresión ========== */
+  .action-bar,
+  .floating-toggle,
+  .binary-background {
+    display: none !important;
   }
 }
