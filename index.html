@@ -24,6 +24,40 @@ function toggleBar() {
   }
 }
 </script>
+  <!-- Librería html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+document.getElementById("btnGenerarPDF").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  // Oculta la barra lateral y botones flotantes temporalmente
+  const actionBar = document.getElementById("actionBar");
+  const toggle = document.querySelector(".floating-toggle");
+  actionBar.style.display = "none";
+  toggle.style.display = "none";
+
+  // Espera breve para aplicar cambios visuales
+  setTimeout(() => {
+    const element = document.body;
+
+    const opt = {
+      margin:       [0.5, 0.5, 0.5, 0.5],
+      filename:     'CV_Txilor_Alvarez.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2, useCORS: true },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save().then(() => {
+      // Restaura visibilidad después de generar PDF
+      actionBar.style.display = "flex";
+      toggle.style.display = "block";
+    });
+  }, 300);
+});
+</script>
+
 </head>
 <body>
 
@@ -36,7 +70,7 @@ function toggleBar() {
 <div class="action-bar" id="actionBar">
   <a href="/txilor" title="Inicio"><i class="fas fa-home"></i></a>
   <a href="mailto:txilor_alvarez@proton.me" title="Email"><i class="fas fa-envelope"></i></a>
-  <a href="certificate/cv.pdf" download title="Descargar CV"><i class="fas fa-file-download"></i></a>
+  <a href="#" id="btnGenerarPDF" title="Descargar CV"><i class="fas fa-file-download"></i></a>
 </div>
 
 
