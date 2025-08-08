@@ -354,46 +354,69 @@ footer {
 @media print {
   body {
     background: white !important;
-    color: black !important;
+    color: #222 !important;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4;
   }
 
-  .action-bar,
-  .floating-toggle,
-  .binary-background {
-    display: none !important;
-  }
-
-  header {
-    background: none !important;
-    color: black !important;
-  }
-
-  header h1,
-  header p,
-  .section,
-  .texto-experiencia,
-  footer {
-    color: black !important;
+  header, section, footer {
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+    padding: 0 !important;
     background: none !important;
     box-shadow: none !important;
   }
 
+  header {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .profile-pic {
+    position: static !important;
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 50% !important;
+    border: 3px solid #333 !important;
+    margin: 0 auto 1rem auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  h1, h2 {
+    color: #111 !important;
+  }
+
+  p, li {
+    color: #333 !important;
+    font-size: 12pt !important;
+  }
+
+  .carousel, .action-bar, .floating-toggle, .binary-background {
+    display: none !important; /* Oculta elementos no deseados en impresión */
+  }
+
+  a {
+    color: #0366d6 !important;
+    text-decoration: underline !important;
+  }
+
+  ul {
+    padding-left: 1.2rem;
+  }
+
+  .proyectos li {
+    display: block !important;
+    margin-bottom: 1rem !important;
+  }
+
   .experiencia {
     background: none !important;
-  }
-
-  .slide img,
-  .proyectos li a img {
-    filter: grayscale(100%);
-  }
-
-  .section, .experiencia {
-    page-break-inside: avoid;
+    padding: 0 !important;
   }
 
   footer {
-    font-size: 12px;
-    margin-top: 2rem;
+    font-size: 10pt !important;
+    color: #666 !important;
   }
 }
-
