@@ -349,3 +349,51 @@ footer {
   background: #161b22;
   font-size: 0.9rem;
 }
+
+/* ==================== ESTILOS PARA IMPRESIÓN PDF ==================== */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .action-bar,
+  .floating-toggle,
+  .binary-background {
+    display: none !important;
+  }
+
+  header {
+    background: none !important;
+    color: black !important;
+  }
+
+  header h1,
+  header p,
+  .section,
+  .texto-experiencia,
+  footer {
+    color: black !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  .experiencia {
+    background: none !important;
+  }
+
+  .slide img,
+  .proyectos li a img {
+    filter: grayscale(100%);
+  }
+
+  .section, .experiencia {
+    page-break-inside: avoid;
+  }
+
+  footer {
+    font-size: 12px;
+    margin-top: 2rem;
+  }
+}
+
