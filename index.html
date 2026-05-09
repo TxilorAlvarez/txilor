@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="description" content="Txilor Alvarez - Cybersecurity Analyst, AI Training Specialist & Multimodal AI Content Specialist. Professional CV portfolio." />
-  <title>Txilor Álvarez – Cybersecurity & AI Specialist</title>
+  <meta name="description" content="Txilor Alvarez - Cybersecurity Analyst, AI Training Specialist & Multimodal AI Content Specialist. ARC Prize 2025 competitor." />
+  <title>Txilor Álvarez – Cybersecurity & AI Specialist | ARC Prize 2025</title>
   
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,50 +18,27 @@
 </head>
 <body>
 
-  <!-- ========== MATRIX BACKGROUND CANVAS (Cascading Rain) ========== -->
+  <!-- ========== MATRIX BACKGROUND CANVAS (Cascading 0s and 1s) ========== -->
   <canvas id="matrixCanvas"></canvas>
 
-  <!-- ========== SECOND TERMINAL: SYSTEM STATUS ========== -->
+  <!-- ========== SINGLE TERMINAL: CONTROL CENTER (Unified) ========== -->
   <div class="system-terminal" id="systemTerminal">
     <div class="terminal-header">
-      <span class="terminal-title"><i class="fas fa-terminal"></i> system@txilor:~/status</span>
+      <span class="terminal-title"><i class="fas fa-terminal"></i> txilor@matrix:~/control_center</span>
       <button class="terminal-close" onclick="toggleSystemTerminal()">×</button>
     </div>
     <div class="terminal-body">
       <p><span class="prompt">$></span> system_status: <span class="online">🟢 ONLINE</span></p>
-      <p><span class="prompt">$></span> primary_role: Cybersecurity Analyst</p>
-      <p><span class="prompt">$></span> ai_specialization: RLHF & Multimodal AI</p>
-      <p><span class="prompt">$></span> organization: Outlier (Scale AI) / AI Community</p>
-      <p><span class="prompt">$></span> kernel: ARC-2.reasoner_v3</p>
-      <p><span class="prompt">$></span> uptime: <span id="uptime">0</span> seconds</p>
+      <p><span class="prompt">$></span> kernel: ARC-2.reasoner_v3 | ARC Prize 2025 Active</p>
+      <p><span class="prompt">$></span> primary_role: Cybersecurity Analyst & AI Specialist</p>
       <p><span class="prompt">$></span> active_projects: <span id="activeProjects">4</span></p>
+      <p><span class="prompt">$></span> uptime: <span id="uptime">0</span> seconds</p>
+      <p><span class="prompt">$></span> ─────────────────────────</p>
+      <p><span class="prompt">📄></span> <a href="#" id="btnGenerarPDF" style="color:#00ffd5; text-decoration:none;">download_cv.pdf</a></p>
+      <p><span class="prompt">🌐></span> <a href="#" id="toggleTranslationLink" style="color:#00ffd5; text-decoration:none;">translate_profile [EN/ES]</a></p>
+      <p><span class="prompt">🏠></span> <a href="/txilor" style="color:#00ffd5; text-decoration:none;">home</a></p>
       <p><span class="prompt blinking">_</span></p>
     </div>
-  </div>
-
-  <!-- ========== FLOATING BUTTONS ========== -->
-  <!-- Mobile menu toggle -->
-  <div class="floating-toggle" onclick="toggleBar()">
-    <i class="fas fa-bars"></i>
-  </div>
-
-  <!-- System terminal toggle -->
-  <div class="floating-toggle-system" onclick="toggleSystemTerminal()">
-    <i class="fas fa-microchip"></i>
-  </div>
-
-  <!-- Translator toggle (new) -->
-  <div class="floating-toggle-translate" id="translateBtn">
-    <i class="fas fa-language"></i>
-  </div>
-
-  <!-- Side Action Bar -->
-  <div class="action-bar" id="actionBar">
-    <a href="/txilor" title="Home"><i class="fas fa-home"></i></a>
-    <a href="mailto:txilor_alvarez@proton.me" title="Email"><i class="fas fa-envelope"></i></a>
-    <a href="#" id="btnGenerarPDF" title="Download CV"><i class="fas fa-file-download"></i></a>
-    <a href="https://github.com/TxilorAlvarez" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/tailor-alvarez-0b7959363/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
   </div>
 
   <!-- ========== HEADER ========== -->
@@ -72,7 +49,8 @@
     <div class="header-badges">
       <span class="badge"><i class="fas fa-shield-alt"></i> Pentester</span>
       <span class="badge"><i class="fas fa-robot"></i> RLHF Expert</span>
-      <span class="badge"><i class="fas fa-language"></i> Multimodal AI</span>
+      <span class="badge"><i class="fas fa-brain"></i> ARC Prize 2025</span>
+      <span class="badge"><i class="fab fa-ibm"></i> IBM Masterclass</span>
     </div>
   </header>
 
@@ -82,32 +60,37 @@
       <h2>Professional Profile</h2>
       <div class="profile-content">
         <div class="profile-text" id="profileText">
-          <p>🔐 <strong>Cybersecurity Analyst</strong> with comprehensive experience in threat detection, vulnerability management, and network security. Proficient in Nmap, Wireshark, Docker, Linux environments, Python automation, risk assessment frameworks, and incident response protocols. Certified by Google Cybersecurity and Harvard's CS50 program, I apply structured methodologies to protect digital infrastructures across diverse platforms.</p>
+          <p>🔐 <strong>Cybersecurity Analyst</strong> with comprehensive experience in threat detection, vulnerability management, and network security. Proficient in Nmap, Wireshark, Docker, Linux environments, Python automation, risk assessment frameworks, and incident response protocols. Certified by Google Cybersecurity and Harvard's CS50 program.</p>
           
           <p>🧠 <strong>AI Training Specialist & Reinforcement Learning from Human Feedback (RLHF) Expert</strong> at <strong>Outlier (Scale AI)</strong>. Specialized in fine-tuning large language models, human preference alignment, data annotation strategies, and quality assurance for advanced reasoning systems including ARC-2 architecture.</p>
           
           <p>🎨 <strong>Multimodal AI Content Specialist - Intermediate (AI Community)</strong> with expertise in cross-modal understanding, visual-language model training, content moderation pipelines, and synthetic data generation. Experienced in bridging textual and visual AI systems to create cohesive, human-aligned outputs.</p>
           
-          <p>💡 <strong>Core competencies:</strong> Offensive Security (Ethical Hacking) | Network Hardening | Python/Scripting | SIEM Solutions | LLM Fine-tuning | Human Preference Data | Multimodal Evaluation | Threat Intelligence | Cloud Security (Azure/AWS)</p>
+          <p>🏆 <strong>ARC Prize 2025 Competitor</strong> – Focused on true generalization in AI systems. The ARC Prize evaluates whether a system can quickly learn new skills in unfamiliar situations, rewarding genuine problem-solving over pattern recognition. My approach combines neuro-symbolic reasoning with adaptive few-shot learning in hidden, interactive environments that require exploration and multi-step reasoning.</p>
+          
+          <p>⚡ <strong>AVANZATEC: Masterclass junto a IBM - ¡La Revolución de la Inteligencia: de Redes Neuronales a Cerebros Reales!</strong> – Advanced certification exploring the evolution from artificial neural networks to brain-inspired computing architectures. Covered neuromorphic hardware, spiking neural networks (SNNs), and real-world applications of brain-like intelligence systems.</p>
+          
+          <p>💡 <strong>Core competencies:</strong> Offensive Security | Network Hardening | Python/Scripting | SIEM Solutions | LLM Fine-tuning | RLHF | Multimodal Evaluation | Threat Intelligence | Cloud Security | Neuro-symbolic AI</p>
         </div>
         <div class="profile-translation" id="profileTranslation" style="display: none;">
-          <p>🔐 <strong>Analista de Ciberseguridad</strong> con experiencia integral en detección de amenazas, gestión de vulnerabilidades y seguridad de red. Dominio de Nmap, Wireshark, Docker, entornos Linux, automatización con Python, marcos de evaluación de riesgos y protocolos de respuesta a incidentes. Certificado por Google en Ciberseguridad y por el programa CS50 de Harvard.</p>
+          <p>🔐 <strong>Analista de Ciberseguridad</strong> con experiencia integral en detección de amenazas, gestión de vulnerabilidades y seguridad de red. Dominio de Nmap, Wireshark, Docker, entornos Linux, automatización con Python, marcos de evaluación de riesgos y protocolos de respuesta a incidentes.</p>
           
           <p>🧠 <strong>Especialista en Entrenamiento de IA & Experto en RLHF</strong> en <strong>Outlier (Scale AI)</strong>. Especializado en ajuste fino de modelos de lenguaje, alineamiento con preferencia humana, estrategias de anotación de datos y aseguramiento de calidad para sistemas de razonamiento avanzado como arquitectura ARC-2.</p>
           
           <p>🎨 <strong>Especialista en Contenido Multimodal de IA - Intermedio (AI Community)</strong> con experiencia en comprensión cross-modal, entrenamiento de modelos visual-lingüísticos, pipelines de moderación de contenido y generación de datos sintéticos.</p>
           
-          <p>💡 <strong>Competencias principales:</strong> Seguridad Ofensiva (Hacking Ético) | Hardening de Redes | Python/Scripting | Soluciones SIEM | Fine-tuning de LLMs | Datos de Preferencia Humana | Evaluación Multimodal | Inteligencia de Amenazas | Seguridad en la Nube (Azure/AWS)</p>
+          <p>🏆 <strong>Competidor ARC Prize 2025</strong> – Enfocado en generalización real en IA. El ARC Prize evalúa si un sistema puede aprender rápidamente nuevas habilidades en situaciones desconocidas, recompensando la resolución genuina de problemas sobre el reconocimiento de patrones.</p>
+          
+          <p>⚡ <strong>AVANZATEC: Masterclass con IBM - ¡La Revolución de la Inteligencia: de Redes Neuronales a Cerebros Reales!</strong> – Certificación avanzada explorando la evolución desde redes neuronales artificiales hasta arquitecturas de computación inspiradas en el cerebro.</p>
+          
+          <p>💡 <strong>Competencias principales:</strong> Seguridad Ofensiva | Hardening de Redes | Python/Scripting | SIEM | Fine-tuning de LLMs | RLHF | Evaluación Multimodal | IA Neuro-simbólica</p>
         </div>
-        <button class="translate-btn" id="toggleTranslation">
-          <i class="fas fa-language"></i> <span id="translateBtnText">Translate to Spanish</span>
-        </button>
       </div>
     </section>
 
-    <!-- ========== CERTIFICATIONS SECTION (CAROUSEL) ========== -->
+    <!-- ========== CERTIFICATIONS SECTION ========== -->
     <section class="section">
-      <h2><i class="fas fa-certificate"></i> Certifications</h2>
+      <h2><i class="fas fa-certificate"></i> Certifications & Achievements</h2>
       <div class="carousel">
         <div class="slide">
           <a href="certificate/EthicalHacker_CISCO.pdf" target="_blank">
@@ -137,6 +120,12 @@
           <a href="certificate/BBVA.pdf" target="_blank">
             <span>Coursera AI & Security</span>
             <img src="img/bbva.png" alt="BBVA Coursera">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="#" target="_blank">
+            <span>🏆 IBM Masterclass - AVANZATEC</span>
+            <img src="img/ibm.png" alt="IBM Masterclass" onerror="this.src='https://via.placeholder.com/280x150?text=IBM+Masterclass'">
           </a>
         </div>
       </div>
@@ -170,6 +159,12 @@
             <img src="img/azure.jpg" alt="Azure Lab">
           </a>
         </li>
+        <li>
+          <a href="https://github.com/TxilorAlvarez/ARC-Prize-2025" target="_blank">
+            <span><i class="fas fa-brain"></i> ARC Prize 2025 - Neuro-Symbolic Solver</span>
+            <img src="img/arc.jpg" alt="ARC Prize" onerror="this.src='https://via.placeholder.com/100x70?text=ARC+2025'">
+          </a>
+        </li>
       </ul>
     </section>
 
@@ -181,27 +176,39 @@
         <article>
           <h3>🛡️ IT Support & Security Analyst – BRM S.A.S.</h3>
           <p class="date"><i class="far fa-calendar-alt"></i> August 2023 – August 2024</p>
-          <p>Responsible for network monitoring, threat detection, and incident response. Implemented OSINT analysis frameworks and security automation using Python in Linux environments. Reduced incident response time by 35% through automated alerting systems.</p>
+          <p>Network monitoring, threat detection, and incident response. Implemented OSINT analysis frameworks and security automation using Python in Linux environments. Reduced incident response time by 35%.</p>
           <p class="cert-link">📄 <a href="certificate/CertfificadoBRM.pdf" target="_blank">View Certificate</a></p>
         </article>
 
         <article>
           <h3>🔍 Technical Support Engineer – Mi coche S.A.S</h3>
           <p class="date"><i class="far fa-calendar-alt"></i> February 2023 – Present</p>
-          <p>Ensuring proper functioning of corporate network and IT systems. Perform diagnostics, routine maintenance, system updates, and security hardening to support daily operations. Implemented backup protocols and disaster recovery procedures.</p>
+          <p>Corporate network and IT systems maintenance. Diagnostics, security hardening, backup protocols, and disaster recovery procedures.</p>
           <p class="cert-link">📄 <a href="certificate/Certificado_Mi_cocheIT.pdf" target="_blank">View Certificate</a></p>
         </article>
 
         <article>
           <h3>🧠 AI Training Specialist (RLHF) – Outlier (Scale AI)</h3>
           <p class="date"><i class="far fa-calendar-alt"></i> January 2024 – Present</p>
-          <p>Specialized in Reinforcement Learning from Human Feedback for large language models. Data annotation, preference ranking, and quality evaluation for ARC-2 reasoning systems. Contributed to model alignment and safety protocols.</p>
+          <p>Reinforcement Learning from Human Feedback for large language models. Data annotation, preference ranking, and quality evaluation for ARC-2 reasoning systems. Model alignment and safety protocols.</p>
         </article>
 
         <article>
           <h3>🎨 Multimodal AI Content Specialist – AI Community</h3>
           <p class="date"><i class="far fa-calendar-alt"></i> March 2024 – Present</p>
-          <p>Cross-modal content evaluation for vision-language models. Synthetic data generation, content moderation pipeline testing, and quality assurance for multimodal outputs. Intermediate-level specialist contributing to community-driven AI safety initiatives.</p>
+          <p>Cross-modal content evaluation for vision-language models. Synthetic data generation, content moderation pipeline testing, and quality assurance for multimodal outputs.</p>
+        </article>
+
+        <article>
+          <h3>🏆 ARC Prize 2025 Competitor</h3>
+          <p class="date"><i class="far fa-calendar-alt"></i> 2025 – Present</p>
+          <p>Developing neuro-symbolic reasoning systems for true generalization in AI. Focus on few-shot learning, hidden environment exploration, and multi-step problem solving without pattern memorization.</p>
+        </article>
+
+        <article>
+          <h3>⚡ AVANZATEC: IBM Masterclass</h3>
+          <p class="date"><i class="far fa-calendar-alt"></i> 2024 – 2025</p>
+          <p>"La Revolución de la Inteligencia: de Redes Neuronales a Cerebros Reales" – Advanced studies in neuromorphic computing, spiking neural networks (SNNs), and brain-inspired AI architectures.</p>
         </article>
       </div>
     </section>
@@ -224,7 +231,8 @@
           <span>Nmap</span> <span>Wireshark</span> <span>Metasploit</span> <span>Burp Suite</span>
           <span>Linux/Unix</span> <span>Windows Server</span> <span>Azure</span> <span>AWS</span>
           <span>TensorFlow</span> <span>PyTorch</span> <span>LLM Fine-tuning</span> <span>RLHF</span>
-          <span>Multimodal AI</span> <span>Data Annotation</span> <span>SIEM</span> <span>OSINT</span>
+          <span>Multimodal AI</span> <span>Neuro-symbolic AI</span> <span>SIEM</span> <span>OSINT</span>
+          <span>Spiking Neural Networks</span> <span>Neuromorphic</span>
         </div>
       </div>
     </section>
@@ -242,25 +250,15 @@
   </div>
 
   <footer>
-    <p><i class="fas fa-shield-haltered"></i> Txilor Álvarez — Cybersecurity & AI Specialist</p>
-    <p>📍 Dynamic CV Portfolio | Matrix Background | Real-time System Monitor</p>
-    <p>© 2025 All Rights Reserved. Built with <i class="fas fa-heart" style="color:#00ffd5;"></i> for innovation.</p>
+    <p><i class="fas fa-shield-haltered"></i> Txilor Álvarez — Cybersecurity & AI Specialist | ARC Prize 2025</p>
+    <p>📍 "The real test of intelligence begins when the problem changes."</p>
+    <p>© 2025 All Rights Reserved.</p>
   </footer>
 
   <!-- ========== SCRIPTS ========== -->
   <script src="script.js"></script>
   <script>
-    // Toggle side action bar (mobile)
-    function toggleBar() {
-      const bar = document.getElementById('actionBar');
-      if (bar.style.left === "0px") {
-        bar.style.left = "-140px";
-      } else {
-        bar.style.left = "0px";
-      }
-    }
-
-    // Toggle system terminal
+    // Toggle system terminal (only floating UI element)
     function toggleSystemTerminal() {
       const terminal = document.getElementById('systemTerminal');
       if (terminal.style.right === "20px") {
@@ -270,65 +268,51 @@
       }
     }
 
-    // Translation toggle for profile section
-    const translateBtn = document.getElementById('toggleTranslation');
+    // Translation toggle for profile section (via terminal link)
+    const translateLink = document.getElementById('toggleTranslationLink');
     const originalText = document.getElementById('profileText');
     const translatedText = document.getElementById('profileTranslation');
-    const btnSpan = document.getElementById('translateBtnText');
     let isTranslated = false;
 
-    if(translateBtn) {
-      translateBtn.addEventListener('click', () => {
+    if(translateLink) {
+      translateLink.addEventListener('click', (e) => {
+        e.preventDefault();
         if(!isTranslated) {
           originalText.style.display = 'none';
           translatedText.style.display = 'block';
-          btnSpan.innerHTML = 'Show Original (English)';
+          translateLink.innerHTML = 'show_original [EN]';
           isTranslated = true;
         } else {
           originalText.style.display = 'block';
           translatedText.style.display = 'none';
-          btnSpan.innerHTML = 'Translate to Spanish';
+          translateLink.innerHTML = 'translate_profile [EN/ES]';
           isTranslated = false;
         }
       });
     }
 
-    // PDF Generation
+    // PDF Generation from terminal link
     document.getElementById("btnGenerarPDF").addEventListener("click", function (e) {
       e.preventDefault();
       
-      const actionBar = document.getElementById("actionBar");
-      const toggle = document.querySelector(".floating-toggle");
       const systemTerminal = document.getElementById("systemTerminal");
       const matrixCanvas = document.getElementById("matrixCanvas");
-      const translateFloat = document.querySelector(".floating-toggle-translate");
-      const systemFloat = document.querySelector(".floating-toggle-system");
       
-      // Hide dynamic elements for PDF
-      if(actionBar) actionBar.style.display = "none";
-      if(toggle) toggle.style.display = "none";
       if(systemTerminal) systemTerminal.style.display = "none";
       if(matrixCanvas) matrixCanvas.style.display = "none";
-      if(translateFloat) translateFloat.style.display = "none";
-      if(systemFloat) systemFloat.style.display = "none";
 
       const element = document.body;
       const opt = {
         margin: [0.5, 0.5, 0.5, 0.5],
-        filename: 'CV_Txilor_Alvarez_Security_AI.pdf',
+        filename: 'CV_Txilor_Alvarez_ARC2025.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2, useCORS: true, logging: false },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
       
       html2pdf().set(opt).from(element).save().then(() => {
-        // Restore elements
-        if(actionBar) actionBar.style.display = "flex";
-        if(toggle) toggle.style.display = "block";
         if(systemTerminal) systemTerminal.style.display = "flex";
         if(matrixCanvas) matrixCanvas.style.display = "block";
-        if(translateFloat) translateFloat.style.display = "flex";
-        if(systemFloat) systemFloat.style.display = "flex";
       });
     });
 
@@ -348,6 +332,14 @@
         projectsSpan.innerText = randomVal;
       }
     }, 8000);
+
+    // Open terminal on page load (optional, gives a nice welcome)
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const terminal = document.getElementById('systemTerminal');
+        if(terminal) terminal.style.right = "20px";
+      }, 500);
+    });
   </script>
 </body>
 </html>
