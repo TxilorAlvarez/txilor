@@ -1,219 +1,353 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Txilor Álvarez – Ciberseguridad</title>
-  <!-- Fuente Inter de Google -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<script>
-  document.querySelectorAll('.binary-background span').forEach(span => {
-    span.textContent = Math.random().toString(2).substr(2, 30);
-  });
-</script>
-<!-- Font Awesome solo con CDN (versión completa) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<link rel="stylesheet" href="style.css">
-<script>
-function toggleBar() {
-  const bar = document.getElementById('actionBar');
-  if (bar.style.left === "0px") {
-    bar.style.left = "-140px";
-  } else {
-    bar.style.left = "0px";
-  }
-}
-</script>
-  <!-- Librería html2pdf -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Txilor Alvarez - Cybersecurity Analyst, AI Training Specialist & Multimodal AI Content Specialist. Professional CV portfolio." />
+  <title>Txilor Álvarez – Cybersecurity & AI Specialist</title>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- html2pdf Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
 </head>
 <body>
 
-  <!-- Botón flotante para móviles -->
-<div class="floating-toggle" onclick="toggleBar()">
-  <i class="fas fa-terminal"></i>
-</div>
+  <!-- ========== MATRIX BACKGROUND CANVAS (Cascading Rain) ========== -->
+  <canvas id="matrixCanvas"></canvas>
 
-<!-- Barra lateral funcional -->
-<div class="action-bar" id="actionBar">
-  <a href="/txilor" title="Inicio"><i class="fas fa-home"></i></a>
-  <a href="mailto:txilor_alvarez@proton.me" title="Email"><i class="fas fa-envelope"></i></a>
-  <a href="#" id="btnGenerarPDF" title="Descargar CV"><i class="fas fa-file-download"></i></a>
-</div>
+  <!-- ========== SECOND TERMINAL: SYSTEM STATUS ========== -->
+  <div class="system-terminal" id="systemTerminal">
+    <div class="terminal-header">
+      <span class="terminal-title"><i class="fas fa-terminal"></i> system@txilor:~/status</span>
+      <button class="terminal-close" onclick="toggleSystemTerminal()">×</button>
+    </div>
+    <div class="terminal-body">
+      <p><span class="prompt">$></span> system_status: <span class="online">🟢 ONLINE</span></p>
+      <p><span class="prompt">$></span> primary_role: Cybersecurity Analyst</p>
+      <p><span class="prompt">$></span> ai_specialization: RLHF & Multimodal AI</p>
+      <p><span class="prompt">$></span> organization: Outlier (Scale AI) / AI Community</p>
+      <p><span class="prompt">$></span> kernel: ARC-2.reasoner_v3</p>
+      <p><span class="prompt">$></span> uptime: <span id="uptime">0</span> seconds</p>
+      <p><span class="prompt">$></span> active_projects: <span id="activeProjects">4</span></p>
+      <p><span class="prompt blinking">_</span></p>
+    </div>
+  </div>
 
+  <!-- ========== FLOATING BUTTONS ========== -->
+  <!-- Mobile menu toggle -->
+  <div class="floating-toggle" onclick="toggleBar()">
+    <i class="fas fa-bars"></i>
+  </div>
 
-<!-- Redes sociales con iconos -->
-<section class="redes-sociales-footer">
-  <div class="redes-iconos">
-    <a href="https://www.linkedin.com/in/tailor-alvarez-0b7959363/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  <!-- System terminal toggle -->
+  <div class="floating-toggle-system" onclick="toggleSystemTerminal()">
+    <i class="fas fa-microchip"></i>
+  </div>
+
+  <!-- Translator toggle (new) -->
+  <div class="floating-toggle-translate" id="translateBtn">
+    <i class="fas fa-language"></i>
+  </div>
+
+  <!-- Side Action Bar -->
+  <div class="action-bar" id="actionBar">
+    <a href="/txilor" title="Home"><i class="fas fa-home"></i></a>
+    <a href="mailto:txilor_alvarez@proton.me" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="#" id="btnGenerarPDF" title="Download CV"><i class="fas fa-file-download"></i></a>
     <a href="https://github.com/TxilorAlvarez" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://www.youtube.com/@txilor_alvarez" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.tiktok.com/@txilor_alvarez" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-    <a href="https://kick.com/txilor-alvarez" target="_blank" title="Kick"><i class="fas fa-gamepad"></i></a>    
-  </div>
-</section>
-
-<header>
-  <div class="binary-background">
-    <span>0110100101010101010101</span>
-    <span>01010101010101010101</span>
-    <span>0101010101</span>
-    <span>01010101010101010101</span>
-    <span>0101010101</span>
-    <span>010101010101010101010101010101</span>
-    <span>00101010101</span>
-    <span>010101101001</span>
+    <a href="https://www.linkedin.com/in/tailor-alvarez-0b7959363/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
   </div>
 
-  <img class="profile-pic" src="img/profile.png" alt="Txilor Alvarez" />
-  <h1>Txilor Álvarez</h1>
-  <p>Cybersecurity-Analyst</p>
-  <p>Especialista en Ciberseguridad | Hacking Ético | Pentester</p>
-</header>
+  <!-- ========== HEADER ========== -->
+  <header>
+    <img class="profile-pic" src="img/profile.png" alt="Txilor Alvarez" />
+    <h1>Txilor Álvarez</h1>
+    <p class="tagline">Cybersecurity Analyst | AI Training Specialist | Multimodal AI Content Specialist</p>
+    <div class="header-badges">
+      <span class="badge"><i class="fas fa-shield-alt"></i> Pentester</span>
+      <span class="badge"><i class="fas fa-robot"></i> RLHF Expert</span>
+      <span class="badge"><i class="fas fa-language"></i> Multimodal AI</span>
+    </div>
+  </header>
 
+  <main>
+    <!-- ========== PROFILE SECTION with TRANSLATION ========== -->
+    <section class="section profile-section">
+      <h2>Professional Profile</h2>
+      <div class="profile-content">
+        <div class="profile-text" id="profileText">
+          <p>🔐 <strong>Cybersecurity Analyst</strong> with comprehensive experience in threat detection, vulnerability management, and network security. Proficient in Nmap, Wireshark, Docker, Linux environments, Python automation, risk assessment frameworks, and incident response protocols. Certified by Google Cybersecurity and Harvard's CS50 program, I apply structured methodologies to protect digital infrastructures across diverse platforms.</p>
+          
+          <p>🧠 <strong>AI Training Specialist & Reinforcement Learning from Human Feedback (RLHF) Expert</strong> at <strong>Outlier (Scale AI)</strong>. Specialized in fine-tuning large language models, human preference alignment, data annotation strategies, and quality assurance for advanced reasoning systems including ARC-2 architecture.</p>
+          
+          <p>🎨 <strong>Multimodal AI Content Specialist - Intermediate (AI Community)</strong> with expertise in cross-modal understanding, visual-language model training, content moderation pipelines, and synthetic data generation. Experienced in bridging textual and visual AI systems to create cohesive, human-aligned outputs.</p>
+          
+          <p>💡 <strong>Core competencies:</strong> Offensive Security (Ethical Hacking) | Network Hardening | Python/Scripting | SIEM Solutions | LLM Fine-tuning | Human Preference Data | Multimodal Evaluation | Threat Intelligence | Cloud Security (Azure/AWS)</p>
+        </div>
+        <div class="profile-translation" id="profileTranslation" style="display: none;">
+          <p>🔐 <strong>Analista de Ciberseguridad</strong> con experiencia integral en detección de amenazas, gestión de vulnerabilidades y seguridad de red. Dominio de Nmap, Wireshark, Docker, entornos Linux, automatización con Python, marcos de evaluación de riesgos y protocolos de respuesta a incidentes. Certificado por Google en Ciberseguridad y por el programa CS50 de Harvard.</p>
+          
+          <p>🧠 <strong>Especialista en Entrenamiento de IA & Experto en RLHF</strong> en <strong>Outlier (Scale AI)</strong>. Especializado en ajuste fino de modelos de lenguaje, alineamiento con preferencia humana, estrategias de anotación de datos y aseguramiento de calidad para sistemas de razonamiento avanzado como arquitectura ARC-2.</p>
+          
+          <p>🎨 <strong>Especialista en Contenido Multimodal de IA - Intermedio (AI Community)</strong> con experiencia en comprensión cross-modal, entrenamiento de modelos visual-lingüísticos, pipelines de moderación de contenido y generación de datos sintéticos.</p>
+          
+          <p>💡 <strong>Competencias principales:</strong> Seguridad Ofensiva (Hacking Ético) | Hardening de Redes | Python/Scripting | Soluciones SIEM | Fine-tuning de LLMs | Datos de Preferencia Humana | Evaluación Multimodal | Inteligencia de Amenazas | Seguridad en la Nube (Azure/AWS)</p>
+        </div>
+        <button class="translate-btn" id="toggleTranslation">
+          <i class="fas fa-language"></i> <span id="translateBtnText">Translate to Spanish</span>
+        </button>
+      </div>
+    </section>
 
-<section class="section">
-  <h2>Profile</h2>
-   <p>
-    🔐 Cybersecurity Analyst with experience in threat detection, vulnerability management, and network security. Skilled in tools such as Nmap, Wireshark, Docker, and Linux, with a strong foundation in risk assessment, incident response, and Python automation.
-Certified by Google in Cybersecurity and trained through Harvard’s CS50, I apply structured methodologies to protect digital environments and support secure infrastructure across diverse platforms.
-  </p>
-  <p>(ES)
-    Profesional apasionado por la seguridad digital, con experiencia en pruebas de escaner, análisis de vulnerabilidades, defensa de sistemas. Creciendo en los conocimientos que puedan brindar soluciones seguras a empresas y particulares.
-  </p>
- 
-</section>
-<section class="section">
-  <h2>Certifications</h2>
-  <div class="carousel">
-    <div class="slide">
-      <a href="certificate/EthicalHacker_CISCO.pdf" target="_blank"> <span>CISCO</span>
-        <img src="img/cisco.png" alt="CertificadoCISCO">
-      </a>
-    </div>
-    <div class="slide">
-      <a href="certificate/Google.pdf" target="_blank"> <span>Google</span> 
-        <img src="img/google.png" alt="Certificado Google">
-      </a>
-    </div>
-    <div class="slide">
-      <a href="certificate/CS50.pdf" target="_blank"> <span>Harvard CS50</span>
-        <img src="img/harvard.png" alt="Certificado Harvard CS50">
-      </a>
-    </div>
-    <!-- Agrega más .slide según necesidad -->
-     <div class="slide">
-      <a href="certificate/Microsoft.pdf" target="_blank"> <span>Microsoft</span> 
-        <img src="img/microsoft.png" alt="Certificado Microsoft">
-      </a>
-    </div>
-    <div class="slide">
-      <a href="certificate/BBVA.pdf" target="_blank"> <span>Coursera</span> 
-        <img src="img/bbva.png" alt="Certificado Coursera">
-      </a>
+    <!-- ========== CERTIFICATIONS SECTION (CAROUSEL) ========== -->
+    <section class="section">
+      <h2><i class="fas fa-certificate"></i> Certifications</h2>
+      <div class="carousel">
+        <div class="slide">
+          <a href="certificate/EthicalHacker_CISCO.pdf" target="_blank">
+            <span>CISCO Ethical Hacker</span>
+            <img src="img/cisco.png" alt="Cisco Certification">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="certificate/Google.pdf" target="_blank">
+            <span>Google Cybersecurity</span>
+            <img src="img/google.png" alt="Google Certification">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="certificate/CS50.pdf" target="_blank">
+            <span>Harvard CS50</span>
+            <img src="img/harvard.png" alt="Harvard CS50">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="certificate/Microsoft.pdf" target="_blank">
+            <span>Microsoft Security</span>
+            <img src="img/microsoft.png" alt="Microsoft Certification">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="certificate/BBVA.pdf" target="_blank">
+            <span>Coursera AI & Security</span>
+            <img src="img/bbva.png" alt="BBVA Coursera">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section class="section proyectos">
+      <h2><i class="fas fa-code-branch"></i> Featured Projects</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/TxilorAlvarez/Quantic_Jared" target="_blank">
+            <span><i class="fas fa-atom"></i> Quantum Computing Lab</span>
+            <img src="img/Quantic.jpg" alt="Quantum Project">
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/TxilorAlvarez/CEA" target="_blank">
+            <span><i class="fab fa-python"></i> CEA - Python Automation Suite</span>
+            <img src="img/cea.jpg" alt="CEA Python">
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/TxilorAlvarez/Cybersecurity" target="_blank">
+            <span><i class="fas fa-lock"></i> Cybersecurity Toolkit</span>
+            <img src="img/linux.jpg" alt="Cybersecurity Tools">
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/TxilorAlvarez/Azure-vm-lab" target="_blank">
+            <span><i class="fab fa-microsoft"></i> Azure VM Security Lab</span>
+            <img src="img/azure.jpg" alt="Azure Lab">
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ========== PROFESSIONAL EXPERIENCE ========== -->
+    <section class="experiencia">
+      <div class="texto-experiencia">
+        <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+        
+        <article>
+          <h3>🛡️ IT Support & Security Analyst – BRM S.A.S.</h3>
+          <p class="date"><i class="far fa-calendar-alt"></i> August 2023 – August 2024</p>
+          <p>Responsible for network monitoring, threat detection, and incident response. Implemented OSINT analysis frameworks and security automation using Python in Linux environments. Reduced incident response time by 35% through automated alerting systems.</p>
+          <p class="cert-link">📄 <a href="certificate/CertfificadoBRM.pdf" target="_blank">View Certificate</a></p>
+        </article>
+
+        <article>
+          <h3>🔍 Technical Support Engineer – Mi coche S.A.S</h3>
+          <p class="date"><i class="far fa-calendar-alt"></i> February 2023 – Present</p>
+          <p>Ensuring proper functioning of corporate network and IT systems. Perform diagnostics, routine maintenance, system updates, and security hardening to support daily operations. Implemented backup protocols and disaster recovery procedures.</p>
+          <p class="cert-link">📄 <a href="certificate/Certificado_Mi_cocheIT.pdf" target="_blank">View Certificate</a></p>
+        </article>
+
+        <article>
+          <h3>🧠 AI Training Specialist (RLHF) – Outlier (Scale AI)</h3>
+          <p class="date"><i class="far fa-calendar-alt"></i> January 2024 – Present</p>
+          <p>Specialized in Reinforcement Learning from Human Feedback for large language models. Data annotation, preference ranking, and quality evaluation for ARC-2 reasoning systems. Contributed to model alignment and safety protocols.</p>
+        </article>
+
+        <article>
+          <h3>🎨 Multimodal AI Content Specialist – AI Community</h3>
+          <p class="date"><i class="far fa-calendar-alt"></i> March 2024 – Present</p>
+          <p>Cross-modal content evaluation for vision-language models. Synthetic data generation, content moderation pipeline testing, and quality assurance for multimodal outputs. Intermediate-level specialist contributing to community-driven AI safety initiatives.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT & SKILLS ========== -->
+    <section class="section contact-skills">
+      <div class="contact-info">
+        <h2><i class="fas fa-address-card"></i> Contact</h2>
+        <p><i class="fas fa-envelope"></i> <strong>txilor_alvarez@proton.me</strong></p>
+        <p><i class="fas fa-envelope-open-text"></i> <strong>jhontailora@gmail.com</strong></p>
+        <p><i class="fab fa-whatsapp"></i> <strong>(+57) 321-396 3019</strong></p>
+        <p><i class="fab fa-github"></i> <strong>github.com/TxilorAlvarez</strong></p>
+        <p><i class="fab fa-linkedin"></i> <strong>linkedin.com/in/tailor-alvarez</strong></p>
+      </div>
+      
+      <div class="skills">
+        <h2><i class="fas fa-cogs"></i> Technical Skills</h2>
+        <div class="skill-tags">
+          <span>Python</span> <span>Bash</span> <span>Docker</span> <span>Kubernetes</span>
+          <span>Nmap</span> <span>Wireshark</span> <span>Metasploit</span> <span>Burp Suite</span>
+          <span>Linux/Unix</span> <span>Windows Server</span> <span>Azure</span> <span>AWS</span>
+          <span>TensorFlow</span> <span>PyTorch</span> <span>LLM Fine-tuning</span> <span>RLHF</span>
+          <span>Multimodal AI</span> <span>Data Annotation</span> <span>SIEM</span> <span>OSINT</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== SOCIAL FOOTER ========== -->
+  <div class="redes-sociales-footer">
+    <div class="redes-iconos">
+      <a href="https://www.linkedin.com/in/tailor-alvarez-0b7959363/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/TxilorAlvarez" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.youtube.com/@txilor_alvarez" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@txilor_alvarez" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://kick.com/txilor-alvarez" target="_blank" title="Kick"><i class="fas fa-gamepad"></i></a>
     </div>
   </div>
-</section>
 
-<section class="section proyectos">
-  <h2>Projects </h2>
-  <ul>
-    <li>
-      <a href="https://github.com/TxilorAlvarez/Quantic_Jared" target="_blank">
-        <span> Quantum Computer</span>
-        <img src="img/Quantic.jpg" alt="Quantic">
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/TxilorAlvarez/CEA" target="_blank">
-        <span>CEA (Python) </span>
-        <img src="img/cea.jpg" alt="Cea">
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/TxilorAlvarez/Cybersecurity" target="_blank">
-        <span>  Cybersecurity </span>
-        <img src="img/linux.jpg" alt="Cybersecurity">
-      </a>
-    </li>
-    <li>
-       <a href="https://github.com/TxilorAlvarez/Azure-vm-lab" target="_blank">
-        <span>Azure-vm</span>
-        <img src="img/azure.jpg" alt="Azure">
-      </a>
-    </li>
-  </ul>
-</section>
+  <footer>
+    <p><i class="fas fa-shield-haltered"></i> Txilor Álvarez — Cybersecurity & AI Specialist</p>
+    <p>📍 Dynamic CV Portfolio | Matrix Background | Real-time System Monitor</p>
+    <p>© 2025 All Rights Reserved. Built with <i class="fas fa-heart" style="color:#00ffd5;"></i> for innovation.</p>
+  </footer>
 
-<section class="experiencia">
-  <div class="texto-experiencia">
-    <h2>Professional Experience</h2>
+  <!-- ========== SCRIPTS ========== -->
+  <script src="script.js"></script>
+  <script>
+    // Toggle side action bar (mobile)
+    function toggleBar() {
+      const bar = document.getElementById('actionBar');
+      if (bar.style.left === "0px") {
+        bar.style.left = "-140px";
+      } else {
+        bar.style.left = "0px";
+      }
+    }
 
-    <article>
-      <p>
-        🛡️ <strong>Soporte IT – BRM S.A.S.</strong><br>
-        <time datetime="2023-08">Agu 2023</time> – <time datetime="2024-08">Agu 2024</time><br>
-        Responsible for network monitoring, threat detection, and incident response. Implemented OSINT analysis and automation using Python in Linux environments..</br>
-        📄 <a href="certificate/CertfificadoBRM.pdf"_blank" rel="noopener">View</a>
-      </p>
-    </article>
+    // Toggle system terminal
+    function toggleSystemTerminal() {
+      const terminal = document.getElementById('systemTerminal');
+      if (terminal.style.right === "20px") {
+        terminal.style.right = "-340px";
+      } else {
+        terminal.style.right = "20px";
+      }
+    }
 
-    <article>
-      <p>
-        🔍 <strong> Technical support – Mi coche S.A.S</strong><br>
-        <time datetime="2023-02">Feb 2023</time> – <time datetime="2025-06">Jun 2025</time><br>
-        Responsible for monitoring and ensuring the proper functioning of the company's network and IT systems. Performed diagnostics, routine maintenance, and system updates to support daily operations..<br>
-        📄 <a href="certificate/Certificado_Mi_cocheIT.pdf"_blank" rel="noopener">View</a>
-      </p>
-    </article>
-  </div>
-</section>
+    // Translation toggle for profile section
+    const translateBtn = document.getElementById('toggleTranslation');
+    const originalText = document.getElementById('profileText');
+    const translatedText = document.getElementById('profileTranslation');
+    const btnSpan = document.getElementById('translateBtnText');
+    let isTranslated = false;
 
+    if(translateBtn) {
+      translateBtn.addEventListener('click', () => {
+        if(!isTranslated) {
+          originalText.style.display = 'none';
+          translatedText.style.display = 'block';
+          btnSpan.innerHTML = 'Show Original (English)';
+          isTranslated = true;
+        } else {
+          originalText.style.display = 'block';
+          translatedText.style.display = 'none';
+          btnSpan.innerHTML = 'Translate to Spanish';
+          isTranslated = false;
+        }
+      });
+    }
 
-<section class="section">
-  <h2>Contact</h2>
-  <p>📬 <strong> txilor_alvarez@proton.me</strong></p>
-  <p>📩 <strong> jhontailora@gmail.com</strong></p>
-  <p>📲 <strong> (+57) 321-396 30 19 </strong></p>
+    // PDF Generation
+    document.getElementById("btnGenerarPDF").addEventListener("click", function (e) {
+      e.preventDefault();
+      
+      const actionBar = document.getElementById("actionBar");
+      const toggle = document.querySelector(".floating-toggle");
+      const systemTerminal = document.getElementById("systemTerminal");
+      const matrixCanvas = document.getElementById("matrixCanvas");
+      const translateFloat = document.querySelector(".floating-toggle-translate");
+      const systemFloat = document.querySelector(".floating-toggle-system");
+      
+      // Hide dynamic elements for PDF
+      if(actionBar) actionBar.style.display = "none";
+      if(toggle) toggle.style.display = "none";
+      if(systemTerminal) systemTerminal.style.display = "none";
+      if(matrixCanvas) matrixCanvas.style.display = "none";
+      if(translateFloat) translateFloat.style.display = "none";
+      if(systemFloat) systemFloat.style.display = "none";
 
-</section>
-
-<footer>
-  <p>Txilor_Álvarez...</p>
-  📍This is create to showmyself it's GOOD!
-  © 2025. Todos los derechos reservados.
-</footer>
-
-</body>
-<script>
-document.getElementById("btnGenerarPDF").addEventListener("click", function (e) {
-  e.preventDefault();
-
-  // Oculta la barra lateral y botones flotantes temporalmente
-  const actionBar = document.getElementById("actionBar");
-  const toggle = document.querySelector(".floating-toggle");
-  actionBar.style.display = "none";
-  toggle.style.display = "none";
-
-  // Espera breve para aplicar cambios visuales
-  setTimeout(() => {
-    const element = document.body;
-
-    const opt = {
-      margin:       [0.5, 0.5, 0.5, 0.5],
-      filename:     'CV_Txilor_Alvarez.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true },
-      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
-
-    html2pdf().set(opt).from(element).save().then(() => {
-      // Restaura visibilidad después de generar PDF
-      actionBar.style.display = "flex";
-      toggle.style.display = "block";
+      const element = document.body;
+      const opt = {
+        margin: [0.5, 0.5, 0.5, 0.5],
+        filename: 'CV_Txilor_Alvarez_Security_AI.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, logging: false },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      
+      html2pdf().set(opt).from(element).save().then(() => {
+        // Restore elements
+        if(actionBar) actionBar.style.display = "flex";
+        if(toggle) toggle.style.display = "block";
+        if(systemTerminal) systemTerminal.style.display = "flex";
+        if(matrixCanvas) matrixCanvas.style.display = "block";
+        if(translateFloat) translateFloat.style.display = "flex";
+        if(systemFloat) systemFloat.style.display = "flex";
+      });
     });
-  }, 300);
-});
-</script>
+
+    // Uptime counter for system terminal
+    let seconds = 0;
+    setInterval(() => {
+      seconds++;
+      const uptimeSpan = document.getElementById('uptime');
+      if(uptimeSpan) uptimeSpan.innerText = seconds;
+    }, 1000);
+
+    // Random active projects counter
+    setInterval(() => {
+      const projectsSpan = document.getElementById('activeProjects');
+      if(projectsSpan) {
+        let randomVal = Math.floor(Math.random() * 5) + 3;
+        projectsSpan.innerText = randomVal;
+      }
+    }, 8000);
+  </script>
+</body>
 </html>
