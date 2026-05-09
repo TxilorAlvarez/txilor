@@ -467,4 +467,161 @@ footer {
   border: 1px solid #00ffd5;
   border-radius: 12px;
   font-family: 'Courier New', monospace;
-  font-size: 0
+  font-size: 0.8rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 1002;
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.2);
+}
+
+.terminal-header {
+  background: rgba(0, 255, 213, 0.1);
+  padding: 8px 12px;
+  border-bottom: 1px solid #00ffd5;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: move;
+}
+
+.terminal-title {
+  font-weight: bold;
+  color: #00ffd5;
+}
+
+.terminal-close {
+  background: none;
+  border: none;
+  color: #ff5555;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.terminal-body {
+  padding: 12px;
+}
+
+.terminal-body p {
+  margin: 6px 0;
+  font-size: 0.75rem;
+}
+
+.prompt {
+  color: #00ffd5;
+  margin-right: 8px;
+}
+
+.online {
+  color: #00ffaa;
+  text-shadow: 0 0 3px #00ffaa;
+}
+
+.blinking {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 3rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+  }
+  
+  .section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .contact-skills {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .proyectos ul {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-bar {
+    left: -140px;
+  }
+  
+  .floating-toggle,
+  .floating-toggle-system,
+  .floating-toggle-translate {
+    padding: 0.6rem 0.8rem;
+    font-size: 1.2rem;
+  }
+  
+  .floating-toggle-translate {
+    bottom: 8rem;
+  }
+  
+  .system-terminal {
+    width: 280px;
+    right: -300px;
+  }
+  
+  .skill-tags span {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+  }
+  
+  .slide {
+    width: 220px;
+  }
+  
+  .texto-experiencia {
+    padding: 1rem;
+  }
+}
+
+/* ==================== PRINT STYLES (PDF) ==================== */
+@media print {
+  #matrixCanvas,
+  .system-terminal,
+  .floating-toggle,
+  .floating-toggle-system,
+  .floating-toggle-translate,
+  .action-bar {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .section, .texto-experiencia {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+  
+  .badge {
+    background: #f0f0f0 !important;
+    color: #333 !important;
+  }
+  
+  a {
+    color: #0366d6 !important;
+  }
+}
