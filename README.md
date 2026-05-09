@@ -1,12 +1,10 @@
-# 👨‍💻 Cybersecurity Analyst – [Jhon-Tailor-Alvarez-Tangarife]
+# 👨‍💻 Cybersecurity Analyst – Jhon-Tailor-Alvarez-Tangarife
 
 ## 🔐 About Me
 
 📍Web: [https://txiloralvarez.github.io/txilor/]
 
-I am a Cybersecurity Analyst passionate about defending digital infrastructure and empowering organizations with secure, resilient systems. With a strong foundation in ethical hacking, network security, and incident response, I strive to protect data integrity and operational continuity in an ever-evolving threat landscape.
-
-I believe cybersecurity is not just about tools and protocols—it's about responsibility, critical thinking, and a commitment to doing what’s right. My approach is grounded in continuous learning, ethical values, and hands-on experience across various environments.
+ICybersecurity Analyst & Digital Defense Architect — Dedicated to fortifying mission-critical infrastructure through high-resiliency security architectures. I specialize in the convergence of Ethical Hacking, advanced Network Security, and Incident Response to maintain absolute data integrity against sophisticated global threats. To me, cybersecurity is an elite commitment to critical thinking and ethical responsibility. By leveraging a continuous learning mindset and hands-on technical mastery, I transform complex vulnerabilities into proactive, ironclad defense strategies that ensure total operational continuity.
 
 ---
 
