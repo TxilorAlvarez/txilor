@@ -495,3 +495,28 @@ footer {
     color: #0366d6 !important;
   }
 }
+
+.ascii-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'Courier New', monospace;
+  color: #00ffd5;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0,255,213,0.3);
+}
+.ascii-toggle:hover {
+  background: #00ffd5;
+  color: black;
+  box-shadow: 0 0 10px #00ffd5;
+}
+
+
+
