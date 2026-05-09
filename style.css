@@ -1,142 +1,407 @@
-/* ==================== ESTILO GENERAL ==================== */
-body {
+/* ==================== RESET & GLOBAL ==================== */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Inter', sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
-  line-height: 1.6;
+  background-color: #0a0c10;
+  color: #e6edf3;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
-/* ==================== CABECERA ==================== */
-header {
-  background-image: url('banner.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 5rem 1.5rem 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.profile-pic {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 4px solid #0d1117;
-  position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  object-fit: cover;
-  z-index: 1;
-}
-
-header h1 {
-  margin-top: 7.5rem;
-  font-size: 2.2rem;
-  z-index: 1;
-  position: relative;
-}
-
-header p {
-  color: #8b949e;
-  margin: 0.3rem 0;
-  z-index: 1;
-  position: relative;
-}
-
-/* ==================== FONDO BINARIO ==================== */
-.binary-background {
-  position: absolute;
+/* ==================== MATRIX CANVAS BACKGROUND ==================== */
+#matrixCanvas {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   z-index: 0;
-  opacity: 0.08;
+  opacity: 0.16;
   pointer-events: none;
 }
 
-.binary-background span {
-  position: absolute;
-  white-space: nowrap;
-  font-size: 2rem;
+/* Ensure all content is above canvas */
+header, main, footer, .action-bar, .floating-toggle, 
+.floating-toggle-system, .floating-toggle-translate, 
+.system-terminal, .redes-sociales-footer {
+  position: relative;
+  z-index: 10;
+}
+
+/* ==================== HEADER SECTION ==================== */
+header {
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+  background: linear-gradient(135deg, rgba(10, 12, 16, 0.95) 0%, rgba(0, 20, 20, 0.9) 100%);
+  border-bottom: 1px solid rgba(0, 255, 213, 0.2);
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #00ffd5;
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(0, 255, 213, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #00ffd5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #8b949e;
+  margin-bottom: 1rem;
+}
+
+.header-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.badge {
+  background: rgba(0, 255, 213, 0.1);
+  border: 1px solid rgba(0, 255, 213, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
   color: #00ffd5;
-  animation: scrollBinary linear infinite;
 }
 
-.binary-background span:nth-child(1) {
-  left: 0%;
-  animation-duration: 14s;
+.badge i {
+  margin-right: 0.5rem;
 }
 
-.binary-background span:nth-child(2) {
-  left: 15%;
-  animation-duration: 5s;
-}
-.binary-background span:nth-child(3) {
-  left: 25%;
-  animation-duration: 12s;
-}
-.binary-background span:nth-child(4) {
-  left: 5%;
-  animation-duration: 8s;
-}
-.binary-background span:nth-child(5) {
-  left: 0%;
-  animation-duration: 6s;
-}
-.binary-background span:nth-child(6) {
-  left: 60%;
-  animation-duration: 7s;
-}
-.binary-background span:nth-child(7) {
-  left: 75%;
-  animation-duration: 4s;
-}
-.binary-background span:nth-child(8) {
-  left: 50%;
-  animation-duration: 3s;
-}
-
-.binary-background span::before {
-  content: '0101010100111010101001011010100101010111010010101010010100101011';
-}
-
-@keyframes scrollBinary {
-  0% {
-    top: -100%;
-  }
-  100% {
-    top: 200%;
-  }
-}
-
-/* ==================== SECCIONES ==================== */
+/* ==================== SECTIONS GENERAL ==================== */
 .section {
+  max-width: 1100px;
+  margin: 2rem auto;
   padding: 1.5rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 255, 213, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ==================== BARRA LATERAL INTERACTIVA ==================== */
+.section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 255, 213, 0.1);
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: #00ffd5;
+  border-left: 4px solid #00ffd5;
+  padding-left: 1rem;
+}
+
+.section h2 i {
+  margin-right: 0.75rem;
+}
+
+/* ==================== PROFILE SECTION WITH TRANSLATION ==================== */
+.profile-section .profile-text p,
+.profile-section .profile-translation p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.translate-btn {
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  border: 1px solid #00ffd5;
+  color: #00ffd5;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.translate-btn:hover {
+  background: #00ffd5;
+  color: #0d1117;
+  box-shadow: 0 0 15px rgba(0, 255, 213, 0.4);
+}
+
+/* ==================== CERTIFICATIONS CAROUSEL ==================== */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding: 1rem 0.5rem;
+  scrollbar-width: thin;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: #161b22;
+  border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: #00ffd5;
+  border-radius: 10px;
+}
+
+.slide {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 280px;
+  background: #161b22;
+  border-radius: 12px;
+  padding: 0.8rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 255, 213, 0.2);
+}
+
+.slide:hover {
+  transform: scale(1.03);
+  border-color: #00ffd5;
+  box-shadow: 0 5px 20px rgba(0, 255, 213, 0.2);
+}
+
+.slide a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.slide span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #00ffd5;
+}
+
+/* ==================== PROJECTS SECTION ==================== */
+.proyectos ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+
+.proyectos li {
+  background: #161b22;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 255, 213, 0.2);
+}
+
+.proyectos li:hover {
+  transform: translateY(-5px);
+  border-color: #00ffd5;
+  box-shadow: 0 8px 20px rgba(0, 255, 213, 0.15);
+}
+
+.proyectos li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  text-decoration: none;
+  color: #e6edf3;
+  gap: 1rem;
+}
+
+.proyectos li a span {
+  flex: 1;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.proyectos li a img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ==================== EXPERIENCE SECTION ==================== */
+.experiencia {
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), url('img/ciberseguridad.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+}
+
+.texto-experiencia {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(13, 17, 23, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 255, 213, 0.3);
+}
+
+.texto-experiencia h2 {
+  color: #00ffd5;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.texto-experiencia article {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 255, 213, 0.2);
+}
+
+.texto-experiencia article h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+}
+
+.texto-experiencia .date {
+  font-size: 0.85rem;
+  color: #8b949e;
+  margin-bottom: 0.8rem;
+}
+
+.cert-link a {
+  color: #00ffd5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cert-link a:hover {
+  text-decoration: underline;
+}
+
+/* ==================== CONTACT & SKILLS SECTION ==================== */
+.contact-skills {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+}
+
+.contact-info p, .skills p {
+  margin: 0.8rem 0;
+}
+
+.contact-info i, .skills i {
+  width: 30px;
+  color: #00ffd5;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.skill-tags span {
+  background: rgba(0, 255, 213, 0.1);
+  border: 1px solid rgba(0, 255, 213, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.skill-tags span:hover {
+  background: #00ffd5;
+  color: #0d1117;
+  cursor: default;
+  transform: scale(1.05);
+}
+
+/* ==================== SOCIAL FOOTER ==================== */
+.redes-sociales-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #0d1117;
+  border-top: 1px solid rgba(0, 255, 213, 0.2);
+}
+
+.redes-iconos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.redes-iconos a {
+  font-size: 1.8rem;
+  color: #58a6ff;
+  transition: all 0.3s ease;
+}
+
+.redes-iconos a:hover {
+  color: #00ffd5;
+  transform: translateY(-5px);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #0a0c10;
+  color: #8b949e;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(0, 255, 213, 0.1);
+}
+
+/* ==================== ACTION SIDEBAR ==================== */
 .action-bar {
   position: fixed;
   top: 50%;
-  left: -135px;
+  left: -140px;
   transform: translateY(-50%);
   width: 140px;
-  background-color: #0d1117;
-  padding: 1rem 0.6rem;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 255, 213, 0.2);
+  background: rgba(13, 17, 23, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  border-radius: 0 12px 12px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: left 0.3s ease;
   z-index: 1000;
+  border: 1px solid rgba(0, 255, 213, 0.3);
+  border-left: none;
 }
 
 .action-bar:hover {
@@ -145,307 +410,61 @@ header p {
 
 .action-bar a {
   color: #58a6ff;
-  margin: 1rem 0;
-  font-size: 1.6rem;
-  text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s ease;
+  margin: 0.8rem 0;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
 }
 
 .action-bar a:hover {
-  transform: scale(1.2);
   color: #00ffd5;
+  transform: scale(1.2);
 }
 
-.action-bar i {
-  pointer-events: none;
-}
-
-/* BOTÓN FLOTANTE PARA MÓVILES */
-.floating-toggle {
+/* ==================== FLOATING BUTTONS ==================== */
+.floating-toggle,
+.floating-toggle-system,
+.floating-toggle-translate {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  background-color: #0d1117;
+  background: rgba(13, 17, 23, 0.9);
+  backdrop-filter: blur(8px);
   color: #00ffd5;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 0.8rem 1rem;
   border-radius: 50px;
-  box-shadow: 2px 2px 10px rgba(0,255,213,0.3);
   cursor: pointer;
   z-index: 1001;
-  display: none;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 255, 213, 0.4);
 }
 
-.floating-toggle:hover {
-  background-color: #161b22;
-  color: #00ffd5;
+.floating-toggle-system {
+  bottom: 5rem;
 }
 
-@media screen and (max-width: 768px) {
-  .action-bar {
-    left: -140px;
-  }
-  .floating-toggle {
-    display: block;
-  }
+.floating-toggle-translate {
+  bottom: 8.5rem;
 }
 
-
-/* ==================== CARRUSEL DE CERTIFICADOS ==================== */
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 1.5rem;
-  padding: 1rem 0;
+.floating-toggle:hover,
+.floating-toggle-system:hover,
+.floating-toggle-translate:hover {
+  background: #00ffd5;
+  color: #0d1117;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.5);
 }
 
-.slide {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  width: 320px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  text-align: center;
-  background-color: #161b22;
-  padding: 0.5rem;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  transition: transform 0.3s ease;
-}
-
-.slide img:hover {
-  transform: scale(1.05);
-}
-
-.slide span {
-  display: block;
-  margin: 0.5rem 0;
-  color: #c9d1d9;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-/* ==================== PROYECTOS Y LABORATORIOS ==================== */
-.proyectos ul {
-  list-style: none;
-  padding: 0;
-}
-
-.proyectos li {
-  margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #161b22;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease;
-}
-
-.proyectos li:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.proyectos li a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  color: #c9d1d9;
-  width: 100%;
-}
-
-.proyectos li a span {
-  flex: 1;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.proyectos li a img {
-  width: 160px;
-  height: 100px;
-  object-fit: cover;
-  margin-left: 1rem;
-  border-radius: 6px;
-  transition: transform 0.3s ease;
-}
-
-.proyectos li a:hover img {
-  transform: scale(1.05);
-}
-
-/* ==================== REDES SOCIALES FOOTER ==================== */
-.redes-sociales-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #161b22;
-  color: #c9d1d9;
-}
-
-.redes-sociales-footer h2 {
-  margin-bottom: 1rem;
-  color: #58a6ff;
-}
-
-.redes-iconos {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.redes-iconos a {
-  font-size: 1.9rem;
-  color: #58a6ff;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.redes-iconos a:hover {
-  transform: scale(1.2);
-  color: #00ffd5;
-}
-
-/* ==================== EXPERIENCIA PROFESIONAL ==================== */
-.experiencia {
-  background-image: url('img/ciberseguridad.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 5rem 2rem;
-  color: #c9d1d9;
-  position: relative;
-  z-index: 0;
-}
-
-.texto-experiencia {
-  max-width: 800px;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.903);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.634);
-  z-index: 1;
-  position: relative;
-}
-
-.texto-experiencia h2 {
-  color: #58a6ff;
-  margin-bottom: 1.5rem;
-}
-
-/* ==================== PIE DE PÁGINA ==================== */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  color: #8b949e;
-  background: #161b22;
-  font-size: 0.9rem;
-}
-
-/* ==================== ESTILOS PARA IMPRESIÓN PDF ==================== */
-/* ==================== ESTILOS PARA IMPRESIÓN PDF ==================== */
-@media print {
-  body {
-    background: white !important;
-    color: #222 !important;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.4;
-  }
-
-  header, section, footer {
-    max-width: 700px;
-    margin: 0 auto 1.5rem auto;
-    padding: 0 !important;
-    background: none !important;
-    box-shadow: none !important;
-  }
-
-  header {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .profile-pic {
-    position: static !important;
-    width: 120px !important;
-    height: 120px !important;
-    border-radius: 50% !important;
-    border: 3px solid #333 !important;
-    margin: 0 auto 0.5rem auto !important; /* Espacio más corto debajo */
-    display: block;
-    object-fit: cover;
-  }
-
-  h1, h2 {
-    color: #111 !important;
-  }
-
-  p, li {
-    color: #333 !important;
-    font-size: 12pt !important;
-  }
-
-  a {
-    color: #0366d6 !important;
-    text-decoration: underline !important;
-  }
-
-  ul {
-    padding-left: 1.2rem;
-  }
-
-  .proyectos li {
-    display: block !important;
-    margin-bottom: 1rem !important;
-  }
-
-  .experiencia {
-    background: none !important;
-    padding: 0 !important;
-  }
-
-  footer {
-    font-size: 10pt !important;
-    color: #666 !important;
-  }
-
-  /* ========== Mostrar los certificados como miniaturas ========== */
-  .carousel {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-    justify-content: center !important;
-    page-break-inside: avoid !important;
-    margin-top: 1rem !important;
-  }
-
-  .slide {
-    width: 150px !important;
-    margin: 0.5rem !important;
-    box-shadow: none !important;
-    background: none !important;
-    padding: 0 !important;
-  }
-
-  .slide img {
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 6px !important;
-    display: block !important;
-  }
-
-  /* ========== Ocultar elementos innecesarios para impresión ========== */
-  .action-bar,
-  .floating-toggle,
-  .binary-background {
-    display: none !important;
-  }
-}
+/* ==================== SYSTEM TERMINAL ==================== */
+.system-terminal {
+  position: fixed;
+  bottom: 20px;
+  right: -340px;
+  width: 300px;
+  background: rgba(10, 15, 25, 0.98);
+  backdrop-filter: blur(12px);
+  border: 1px solid #00ffd5;
+  border-radius: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 0
